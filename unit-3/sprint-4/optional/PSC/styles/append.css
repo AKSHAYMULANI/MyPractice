@@ -1,0 +1,19 @@
+#container{
+    display: grid;
+    width: 90%;
+    margin: 20px auto;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+#container img{
+    width: 100%;
+    height: 300px;
+}
+
+#container div{
+    padding: 5px;
+    border: 1px solid black;
+}
+

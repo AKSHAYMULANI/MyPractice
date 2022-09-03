@@ -1,0 +1,149 @@
+
+class Guest{
+    constructor(age, gender, category){
+        this._age = age;
+        this._gender = gender;
+        this._category = category;
+    }
+
+    get category(){
+        return this._category;
+    }
+
+    set category(value){
+        this._category = value;
+    }
+}
+
+class Vvips extends Guest{
+    constructor(age, gender){
+        super(age, gender, "VVIP")
+    }
+}
+
+class Vips extends Guest{
+    constructor(age, gender){
+        super(age, gender, "VIP")
+    }
+}
+
+class General extends Guest{
+    constructor(age, gender){
+        super(age, gender, "General")
+    }
+}
+
+class Slot{
+    constructor(category, number){
+        this.number = number;
+        this.category = category;
+        this._isBooked = false;
+    }
+
+    get isBooked(){
+        return this._isBooked;
+    }
+
+    set isBooked(value){
+        this._isBooked = value;
+    }
+}
+
+class StadiumFloor{
+    constructor(floorNumber, maxSpots){
+        this.floorNumber = floorNumber;
+        this._seatingSpot = [];
+        
+        for(let i = 0; i<maxSpots; i++){
+            if(i == 0){
+                this._seatingSpot.push(new Slot("VVIP", i));
+            } else if (i == 1){
+                this._seatingSpot.push(new Slot("VIp", i));
+            } else {
+                this._seatingSpot.push(new Slot("General", i));
+            }
+    
+            
+        }
+    }
+
+    get seatingSpot(){
+        return this._seatingSpot;
+    }
+
+    set seatingSpot(value) {
+        this._seatingSpot = value;
+    }
+}
+
+class Stadium{
+    constructor(number){
+        this._floors = [];
+        this._numberOfFloors = number;
+
+        for(let i=0; i<number; i++){
+            this._floors.push(new StadiumFloor(i,3))
+        }
+    }
+
+    get numberOfFloors(){
+        return this._numberOfFloors;
+    }
+
+    get floors(){
+        return this._floors;
+    }
+
+    BookingSeat(guest){
+        let seat = this.findSeat(guest.category)
+
+        if(seat) {
+            this.bookSeat(seat);
+            let ticket = new Ticket(seat.floorNumber, seat.seat.number);
+            console.log("Ticket:", ticket);
+        } else{
+            console.log("No Seats");
+            return false;
+        }
+           
+    }
+
+    findSeat(category){
+        for(let i=0; i<this._numberOfFloors; i++){
+            for(let seat of this._floors[i]._seatingSpot){
+                if(seat.category === category && !seat._isBooked){
+                    return { floorNumber: i, seat: seat };
+                }
+            }
+        }
+        return false;
+    }
+
+    bookSeat(seat){
+        seat.seat.isBooked = true;
+        console.log("Seat is Booked");
+        return true;
+    }
+}
+
+class Ticket{ 
+    constructor(floorNumber, seatNumber){
+        this.floorNumber = floorNumber;
+        this.seatNumber = seatNumber;
+        this.issuedAt = new Date();
+    }
+}
+
+
+// let p1 = new StadiumFloor(1,4);
+
+let b1 = new Vvips("24", "male");
+pl1 = new Stadium(3)
+
+pl1.BookingSeat(b1)
+pl1.BookingSeat(b1)
+pl1.BookingSeat(b1)
+pl1.BookingSeat(b1)
+
+
+// console.log(p1.seatingSpot)

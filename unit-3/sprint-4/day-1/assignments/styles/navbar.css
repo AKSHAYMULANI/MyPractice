@@ -1,0 +1,15 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+
+
+#options{
+    display: flex;
+    gap: 15px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTSTAR III  Trending Movies </title>
+    <style>
+         #container{
+            margin: auto;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            width: 90%;
+            
+        }
+
+        h2,form{
+            margin-left: 5%;
+            margin-top: 20px;
+        }
+
+        img{
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="pagesNo(event)">
+        <label for="PageNo">Choose a Page:</label>
+        <select id="PageNo" name="pages">
+        </select>
+        <input type="submit">
+    </form>
+    <h2>Favourite Movies</h2>
+    <div id="container"></div>
+    
+
+
+    
+</body>
+</html>
+<script src="index.js"></script>
