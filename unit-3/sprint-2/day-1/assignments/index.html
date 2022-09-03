@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mc Donald's</title>
+    <style>
+        body{
+            display: grid;
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            grid-template-columns: repeat(3,1fr);
+            text-align: left;
+            gap: 10px;
+        }
+
+        div>input{
+            margin-bottom: 10px;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        #orderid{
+            text-align: right;
+        }
+
+    </style>
+   
+</head>
+<body>
+    <div>
+        <input type="checkbox" id="order" value="aalu tiki burger"/>
+        <label for="aalu tiki burger"> Aalu Tiki Burger</label>
+        <br>
+        <input type="checkbox" id="order" value="american Burger"/>
+        <label for="american Burger"> American Burger</label>
+        <br>
+        <input type="checkbox" id="order" value="cocacola"/ >
+        <label for="cocacola"> Cocacola</label>
+        <br>
+        <button onclick="order()">Order</button>
+    </div>  
+
+    <img src="" id="loading_img">
+    <h3 id="orderid">Order Id</h3>
+</body>
+</html>
+<script src="./index.js"></script>

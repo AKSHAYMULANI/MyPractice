@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        #results{
+
+            display: grid;
+            grid-template-columns: repeat(1,100%);
+            gap: 10px;
+            width: 90%;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        #results>div{
+            display: flex;
+            justify-content: flex-start;
+            width: fit-content;
+         
+        }
+
+        #results>div>h3{
+            margin-left: 20px;
+            
+        }
+        
+        #menu img{
+            height: 30px;
+            margin-left: 20px;
+        }
+
+
+        #menu{
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            width: 90%;
+            margin: auto;
+        }
+
+        #menu>div{
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        #menu>div:first-child{
+            justify-content: flex-start;
+        }
+
+        div>div{
+            display: flex;
+            width: 25%;
+        }
+
+        div>div:nth-child(2){
+            width: 50%;
+        }
+        
+        input{
+            width: 70%;
+            height: 30px;
+            font: larger;
+        }
+
+        button{
+            position: absolute;
+            padding: 16px;
+            width: 50px;
+            height: 30px;
+        }
+
+        #menu #search{                   
+            position: relative;
+            top: 7px;
+            left: -5px;
+            height: 20px;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+  
+    <div id="menu">
+        <div>
+           <img src="https://cdn-icons.flaticon.com/png/128/2976/premium/2976215.png?token=exp=1654011117~hmac=f44e689b1938ee728e36672093cccd80" alt="">
+            
+            <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1200px-YouTube_Logo_2017.svg.png" alt="">
+        </div>
+        <div>
+            <input type="text" id="query" placeholder="search" />
+            
+            <div>
+                <button onclick="search()"></button>
+                <img id="search" onclick="search()" src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="">
+            </div>
+            
+        </div>
+        <div>
+            <img src="https://cdn-icons.flaticon.com/png/128/4188/premium/4188918.png?token=exp=1654011292~hmac=544086ed2189ae53791a1628387eebb0" alt="">
+            <img src="https://cdn-icons.flaticon.com/png/128/3018/premium/3018978.png?token=exp=1654011249~hmac=00f9cd64cf7a0071e6e73923f7fd2036" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/128/3602/3602123.png" alt="">
+            <img src="https://t4.ftcdn.net/jpg/00/97/00/09/240_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg" alt="">
+            
+        </div>
+    </div>
+
+    <hr>
+
+<div id="results"></div>
+    
+</body>
+</html>
+<script src="index.js"></script>

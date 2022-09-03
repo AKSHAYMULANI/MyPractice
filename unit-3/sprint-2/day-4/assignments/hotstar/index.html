@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotstar 1</title>
+    <style>
+        input{
+            width: 195px;
+        }
+
+        #movie{
+            width: 200px;
+            height: 200px;
+            background-color:unset;
+            border-top: none;
+            overflow-y:scroll;
+            scrollbar-color:unset;
+            padding-left: 10px;
+            position: fixed;
+            z-index: 2;
+        }
+
+        #movie::-webkit-scrollbar {
+        display: none;
+        }
+
+
+        #container{
+            margin-top: 30px;
+            bottom: 100px;
+            z-index: 1;
+            margin-bottom: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <input id="query" type="text" oninput="debouncing(main,1000)"/>
+    <div id="movie"></div>
+    <div id="container"></div>
+    
+</body>
+</html>
+<script src="index.js"></script>

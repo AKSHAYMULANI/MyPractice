@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata's R&D</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //object.createmethod
+
+let newCar = {
+
+Brand: "Tata"
+
+}
+
+let car = Object.create(newCar)
+
+car.Brand = "Tata"
+car.type = "SUV"
+car.fuel = "petrol"
+car.size = "5 seater"
+
+console.log(car)
+
+// consturctor function method
+
+class NewCar{
+constructor(b , t, f, s){
+    this.Brand = b
+    this.type = t
+    this.fuel = f
+    this.size = s
+}
+}
+
+let constCar = new NewCar("Tata", "normal", "E-power", "7 Seater")
+
+console.log(constCar)
+
+// here if constroctor function is already created then engeener is uses this method. "object.creat()" method will not use
+</script>

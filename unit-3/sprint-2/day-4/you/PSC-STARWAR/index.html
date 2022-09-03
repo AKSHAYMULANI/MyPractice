@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star-War</title>
+    <style>
+        #person{
+            width: 200px;
+            height: 200px;
+            background-color:unset;
+            border-top: none;
+            overflow-y:scroll;
+            scrollbar-color:unset;
+            padding-left: 10px;
+            position: fixed;
+            z-index: 2;
+        }
+
+        #person::-webkit-scrollbar {
+        display: none;
+        }
+
+        h2{
+            margin-bottom: 2px;
+            margin-top: 3px;
+            font-size: small;
+        }
+        p{
+            margin-bottom: 5px;
+            margin-top: 0px;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="query" oninput= "debouncing(main,1000)">
+    <div id="person"></div>
+</body>
+</html>
+
+<script src="index.js"></script>

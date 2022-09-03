@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            text-align: center;
+        }
+        #results{
+            width: 90%;
+            margin: auto;
+        }
+
+        iframe,div{
+            margin: auto;
+            width: 90%;
+            height: 400px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h3>video</h3>
+    <div id="results"></div>
+    
+</body>
+</html>
+
+<script>
+
+    let video = JSON.parse(localStorage.getItem("video"))
+
+    let append = ({ videoId, title})=>{
+
+        let container = document.getElementById("results")
+        container.innerHTML = ""
+        
+        let div = document.createElement('div')
+        let iframe = document.createElement('iframe')
+        iframe.src = `https://www.youtube.com/embed/${videoId}`
+        iframe.allow = "fullscreen"
+
+        let h3 = document.createElement('h3')
+        h3.innerText = title
+
+        div.append(iframe,h3)
+            
+
+        container.append(div)
+        
+    }
+
+    append(video)
+
+</script>

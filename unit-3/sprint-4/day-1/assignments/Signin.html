@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div id="user">
+        <div id="signup">
+
+            <input type="text" id="name" placeholder="Enter Your Full Name"/>
+            <input type="email" id="email" placeholder="Enter Your Email">
+            <input type="password" id="password" placeholder="Enter Your Password">
+            <button id="signBtn">Sign Up</button>
+            
+        </div>
+        <div id="signin">
+            <input type="email" id="emails" placeholder="Enter Your Email">
+            <input type="password" id="passwords" placeholder="Enter Your Password">
+            <button id="signinBtn" >Sign In</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    
+    document.getElementById("navbar").innerHTML = navbar()
+    import {UserData} from "./Scripts/getdata.js"
+
+    let Signup = document.getElementById("signBtn")
+    Signup.addEventListener("click",()=>{
+        signup()
+    })
+
+    let Login = document.getElementById("signinBtn")
+    Login.addEventListener("click",()=>{
+        signin(userData)
+    })
+
+    let userData = JSON.parse(localStorage.getItem("userdata")) || []
+
+    let signup = ()=>{
+        let n = document.getElementById("name").value
+        let e = document.getElementById("email").value
+        let p = document.getElementById("password").value
+        let obj = new UserData(n,e,p)
+        console.log(obj)
+        userData.push(obj)
+        localStorage.setItem("userdata",JSON.stringify(userData))
+    }
+
+    let signin= (data)=>{
+        let email = document.getElementById("emails").value
+        let pass = document.getElementById("passwords").value
+        let count = 0;
+        for(let i=0; i<data.length; i++){
+            if(data[i].email==email && data[i]._password == pass){
+                alert("Signin Successfull")
+                localStorage.setItem("logindata",JSON.stringify(data[i]))
+                count++;
+            }
+
+        }
+        if(count==0){
+            alert("Please Enter Correct Id & password")
+        }
+    }
+
+
+
+</script>
